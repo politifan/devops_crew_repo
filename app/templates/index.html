@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">FastAPI training project</p>
+        <h1>{{ title }}</h1>
+        <p class="lead">
+          Небольшой сайт для практики CI, тестов, Docker-сборки, деплоя на сервер
+          и работы с отдельной dev-веткой.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="/docs">OpenAPI</a>
+          <a class="button secondary" href="/health">Health</a>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="features-title">
+        <div>
+          <p class="label">Environment</p>
+          <strong>{{ environment }}</strong>
+        </div>
+        <div>
+          <h2 id="features-title">Что есть в проекте</h2>
+          <ul>
+            {% for feature in features %}
+            <li>{{ feature }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+"""Training FastAPI application package."""
